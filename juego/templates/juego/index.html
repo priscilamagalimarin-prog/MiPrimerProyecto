@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Silencio | Sitio Oficial</title>
+    <!-- Fuentes modernas de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'juego/css/styles.css' %}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="logo">PROTOCOLO <span>SILENCIO</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#mision">La Misión</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#descargar" class="btn-nav">Jugar Demo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <section id="inicio" class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <span class="badge">AGENTE 07 // ARCHIVO CLASIFICADO</span>
+            <h1>EL TIEMPO NO PERDONA ERRORES</h1>
+            <p>Infíltrate, borra todo rastro y altera la línea temporal antes de que el reloj llegue a cero. Una experiencia de sigilo, lógica y tensión contrarreloj.</p>
+            <div class="hero-buttons">
+                <a href="#galeria" class="btn-primary">Explorar Capturas</a>
+                <a href="#mision" class="btn-secondary">Leer Informe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE HISTORIA Y MECÁNICAS -->
+    <section id="mision" class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>DIRECTIVAS DEL NIVEL 01</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3>Eliminación de Evidencia</h3>
+                    <p>Localiza y destruye registros comprometedores antes de que sean interceptados. Cada pista cuenta en la operación.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3>Desactivación Crítica</h3>
+                    <p>Intervén circuitos experimentales bajo presión extrema. Tienes exactamente 15 segundos para cortar la secuencia correcta.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3>Encubrimiento</h3>
+                    <p>Simula una falla accidental para borrar cualquier sospecha de intervención externa antes de abandonar la zona.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CARRUSEL DE FOTOS -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>REGISTROS VISUALES</h2>
+                <div class="line"></div>
+                <p class="subtitle">Capturas reales del desarrollo y entornos del juego</p>
+            </div>
+
+            <div class="carousel-wrapper">
+                <button type="button" class="carousel-btn prev" id="prevBtn" aria-label="Anterior">&#10094;</button>
+                
+                <div class="carousel-track-container">
+                    <ul class="carousel-track" id="track">
+                        <!-- DIAPOSITIVA 1 -->
+                        <li class="carousel-slide current-slide">
+                            <img src="{% static 'juego/img/captura-menu.png' %}" alt="Menú Principal de Protocolo Silencio">
+                            <div class="slide-caption">
+                                <h4>Interfaz Principal</h4>
+                                <p>Inicio del juego.</p>
+                            </div>
+                        </li>
+                        <!-- DIAPOSITIVA 2 -->
+                        <li class="carousel-slide">
+                            <img src="{% static 'juego/img/captura-cables.png' %}" alt="Mini-puzzle de cables">
+                            <div class="slide-caption">
+                                <h4>Desactivación Contrarreloj</h4>
+                                <p>Secuencia de cables: Rojo, Azul, Verde en menos de 15 segundos.</p>
+                            </div>
+                        </li>
+                        <!-- DIAPOSITIVA 3 -->
+                        <li class="carousel-slide">
+                            <img src="{% static 'juego/img/captura-nivel1.png' %}" alt="Escenario Nivel 1">
+                            <div class="slide-caption">
+                                <h4>Infiltración en el Departamento</h4>
+                                <p>Atmósfera inmersiva diseñada en Godot Engine.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" class="carousel-btn next" id="nextBtn" aria-label="Siguiente">&#10095;</button>
+            </div>
+
+            <!-- Indicadores inferiores (puntitos) -->
+            <div class="carousel-nav" id="carouselNav">
+                <button type="button" class="carousel-indicator current-slide" aria-label="Imagen 1"></button>
+                <button type="button" class="carousel-indicator" aria-label="Imagen 2"></button>
+                <button type="button" class="carousel-indicator" aria-label="Imagen 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / LLAMADO A LA ACCIÓN -->
+    <footer id="descargar" class="footer">
+        <div class="container">
+            <h3>¿LISTO PARA INICIAR EL PROTOCOLO?</h3>
+            <p>Desarrollado en Godot Engine • Edición Windows Desktop</p>
+            <a href="#" class="btn-primary">Descargar Ejecutable (.EXE)</a>
+            <div class="copyright">
+                &copy; 2026 Protocolo Silencio. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DEL CARRUSEL INTEGRADO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('track');
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('nextBtn');
+            const prevButton = document.getElementById('prevBtn');
+            const dotsNav = document.getElementById('carouselNav');
+            const dots = Array.from(dotsNav.children);
+
+            let currentIndex = 0;
+
+            function moveToSlide(targetIndex) {
+                if (targetIndex < 0) {
+                    targetIndex = slides.length - 1;
+                } else if (targetIndex >= slides.length) {
+                    targetIndex = 0;
+                }
+
+                track.style.transform = 'translateX(-' + (targetIndex * 100) + '%)';
+
+                dots[currentIndex].classList.remove('current-slide');
+                dots[targetIndex].classList.add('current-slide');
+
+                currentIndex = targetIndex;
+            }
+
+            nextButton.addEventListener('click', function() {
+                moveToSlide(currentIndex + 1);
+            });
+
+            prevButton.addEventListener('click', function() {
+                moveToSlide(currentIndex - 1);
+            });
+
+            dots.forEach(function(dot, index) {
+                dot.addEventListener('click', function() {
+                    moveToSlide(index);
+                });
+            });
+
+            setInterval(function() {
+                moveToSlide(currentIndex + 1);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
